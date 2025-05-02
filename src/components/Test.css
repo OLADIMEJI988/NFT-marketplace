@@ -1,0 +1,28 @@
+
+.background{
+    background-image: url('../assets/bg.jpg');
+    background-size: contain;
+    background-position: center;
+    height: 670px;
+}
+
+.radius{
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+}
+
+.glassEffect{
+    padding: 20px 15px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.01));
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-top: 1px solid rgb(255, 255, 255, 0.4);
+    border-left: 1px solid rgb(255, 255, 255, 0.3);
+    border-right: 1px solid rgb(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgb(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    display: flex-column;
+    justify-content: center;
+}
+
