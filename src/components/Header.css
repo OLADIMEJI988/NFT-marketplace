@@ -1,0 +1,19 @@
+.hoverEffectBtn:hover{
+    transform: scale(0.93) !important;
+    z-index: 2;
+}
+
+.hoverEffectText:hover{
+    color: #A259FF;
+}
+
+.transition {
+    transition: 1s;
+}
+
+.sans{
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}

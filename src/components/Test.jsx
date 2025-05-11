@@ -3,7 +3,7 @@ import im_3 from "../assets/im_3.jpg";
 import im4 from "../assets/im4.jpg";
 import im_2 from "../assets/im_2.jpg";
 import './Test.css'
-import GlassCard from './GlassCard';
+import GlassCard from './LandingPageComponents/GlassCard';
 
 
 

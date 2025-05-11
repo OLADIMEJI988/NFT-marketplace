@@ -1,0 +1,15 @@
+.sans{
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.hoverEffect:hover{
+    transform: scale(0.96) !important;
+    z-index: 2;
+}
+
+.transition {
+    transition: 1s;
+}
