@@ -18,7 +18,7 @@ export default function ArtistCollection() {
         <div className='flex justify-center gap-6'>
             <CreatedNFT mainimg={boredmonkey1} title="Banjo Blaze" />
             <CreatedNFT mainimg={boredmonkey2} title="Chimpy Drip" />
-            <CreatedNFT mainimg={boredmonkey3} title="Pixel Kong" />
+            <CreatedNFT mainimg={boredmonkey7} title="Crypto Chimp" />
         </div>
 
         <div className='flex justify-center gap-6'>
@@ -28,7 +28,7 @@ export default function ArtistCollection() {
         </div>
 
         <div className='flex justify-center gap-6'>
-            <CreatedNFT mainimg={boredmonkey7} title="Crypto Chimp" />
+            <CreatedNFT mainimg={boredmonkey3} title="Pixel Kong" />
             <CreatedNFT mainimg={boredmonkey8} title="Neon Marmoset" />
             <CreatedNFT mainimg={boredmonkey6} title="Funkzilla" />
         </div>

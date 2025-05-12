@@ -38,7 +38,7 @@ export default function ArtistPage() {
   };
 
   return (
-    <>
+    <>   
       <Header />
       <div className='bg-[#2B2B2B] text-white border-b-2 border-[#2B2B2B]'>
         <img className='w-full' src={imgplaceholder} alt="" />
@@ -142,7 +142,6 @@ export default function ArtistPage() {
           </div>
         </div>
 
-        {/* Tab Content Sections */}
         {activeTab === 'created' && (
           <div className='bg-[#3B3B3B] pt-8 pb-14 transition-opacity duration-500 opacity-100'>
             <Created />
@@ -162,6 +161,7 @@ export default function ArtistPage() {
         )}
       </div>
       <Footer />
+       
     </>
   );
 }

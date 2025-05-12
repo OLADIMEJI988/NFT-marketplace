@@ -54,12 +54,11 @@ export default function CreateAccount() {
 
       {showPopup && (
             <div className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50">
-                <div className="bg-green-600 text-white px-6 py-4 rounded-xl shadow-lg text-lg font-semibold">
-                  Welcome! {form.username}
-                </div>
+              <div className="bg-green-600 text-white px-6 py-4 rounded-xl shadow-lg text-lg font-semibold">
+                Welcome! {form.username}
+              </div>
             </div>
        )}
-
 
       <div className='flex bg-[#2B2B2B] justify-center sans text-white text-start gap-14'>
         <img className='h-[500px]' src={mainImg} alt="" />
