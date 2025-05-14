@@ -2,18 +2,17 @@ import React from 'react'
 import './DiscoverNFT.css'
 import { Link } from 'react-router-dom'
 
-
-export default function ({ mainimg, Avatar, avatarName, title }) {
+export default function NftFromArtist({ mainimg, Avatar, avatarName, title }) {
   return (
     <>
-        <Link to="/AboutNFT">
+       <Link to="/AboutNFT">
             <div className='mt-5 cursor-pointer hoverEffect transition'>
-                <img className='h-60' src={mainimg} alt="" />
+                <img className='h-[245px]' src={mainimg} alt="" />
                 <div className='text-start bg-[#3B3B3B] py-4 px-6 text-white sans rounded-b-[13px]'>
-                    <p className='text-[16px]'>{title}</p>
+                    <p className='text-[20px]'>{title}</p>
                     <div className='flex items-center gap-2 mt-2'>
-                        <img className='h-4' src={Avatar} alt="" />
-                        <p className='text-xs font-light tracking-wide'>{avatarName}</p>
+                        <img className='h-5' src={Avatar} alt="" />
+                        <p className='text-[13px] font-light tracking-wider'>{avatarName}</p>
                     </div>
                     <div className='flex mt-5 justify-between'>
                         <div className='spaceMono'>
@@ -29,6 +28,5 @@ export default function ({ mainimg, Avatar, avatarName, title }) {
             </div>
         </Link>
     </>
-    
   )
 }

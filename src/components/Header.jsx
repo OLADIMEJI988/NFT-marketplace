@@ -28,7 +28,9 @@ export default function Header() {
         <img className='h-5' src={logo} alt="logo" />
       </Link>
       <div className='flex text-white gap-9 text-[13px] items-center sans'>
-        <p className='cursor-pointer hoverEffectText transition'>Marketplace</p>
+        <Link to="/NFTMarketplace">
+          <p className='cursor-pointer hoverEffectText transition'>Marketplace</p>
+        </Link>
         <p className='cursor-pointer hoverEffectText transition'>Rankings</p>
         <Link to="/ConnectWallet">
           <p className='cursor-pointer hoverEffectText transition'>Connect a wallet</p>

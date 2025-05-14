@@ -9,6 +9,8 @@ import ArtistPage from './pages/ArtistPage'
 
 import ScrollToTop from './components/ScrollToTop';
 import Login from './pages/Login'
+import AboutNFT from './pages/AboutNFT'
+import NFTMarketplace from './pages/NFTMarketplace'
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/ConnectWallet" element={<ConnectWallet />} />
         <Route path="/ArtistPage" element={<ArtistPage />} />
+        <Route path="/AboutNFT" element={<AboutNFT />} />
+        <Route path="/NFTMarketplace" element={<NFTMarketplace />} />
       </Routes>
     </BrowserRouter>
   )

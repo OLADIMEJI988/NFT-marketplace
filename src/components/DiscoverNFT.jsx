@@ -7,6 +7,7 @@ import nebulakid from "../assets/nebulakid.png";
 import spaceone from "../assets/spaceone.png";
 import astrofiction from "../assets/astrofiction.png";
 
+
 import './DiscoverNFT.css'
 import Nft from './Nft';
 
