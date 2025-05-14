@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import mainImg from "../assets/mainImg.png";
+import successicon from "../assets/successicon.png";
 
 import AccHeader from '../components/AccHeader';
 import Footer from '../components/Footer';
@@ -45,7 +46,7 @@ export default function CreateAccount() {
     setTimeout(() => {
       setShowPopup(false);
       navigate('/');
-    }, 2000);
+    }, 3000);
   };
 
   return (
@@ -54,8 +55,10 @@ export default function CreateAccount() {
 
       {showPopup && (
             <div className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50">
-              <div className="bg-green-600 text-white px-6 py-4 rounded-xl shadow-lg text-lg font-semibold">
-                Welcome! {form.username}
+              <div className="sans bg-[#2B2B2B] text-start w-96 h-44 text-white px-6 py-4 rounded-xl shadow-lg text-lg">
+                <img className='h-12' src={successicon} alt="" />
+                <p className='trackimg-wide my-2 text-xl'>Account Created Successfully!</p>
+                <p className='text-sm tracking-wide font-light'>Welcome {form.username}! we're glad to have you onboard.</p>
               </div>
             </div>
        )}
