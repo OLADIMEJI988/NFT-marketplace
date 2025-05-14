@@ -11,6 +11,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Login from './pages/Login'
 import AboutNFT from './pages/AboutNFT'
 import NFTMarketplace from './pages/NFTMarketplace'
+import CreatorRankings from './pages/CreatorRankings'
 
 
 function App() {
@@ -25,6 +26,8 @@ function App() {
         <Route path="/ArtistPage" element={<ArtistPage />} />
         <Route path="/AboutNFT" element={<AboutNFT />} />
         <Route path="/NFTMarketplace" element={<NFTMarketplace />} />
+        <Route path="/CreatorRankings" element={<CreatorRankings />} />
+        
       </Routes>
     </BrowserRouter>
   )

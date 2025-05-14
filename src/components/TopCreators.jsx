@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate, Link } from 'react-router-dom';
 import Rocket from "../assets/purpleRocketLaunch.png";
 import keepitreal from "../assets/keepitreal.png";
 import digilab from "../assets/digilab.png";
@@ -18,6 +19,13 @@ import Creators from './Creators';
 
 
 export default function TopCreators() {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/CreatorRankings');
+  };
+
   return (
     <div className='bg-[#2B2B2B] text-start px-20 text-white sans py-10'>
         <div className='flex justify-between'>
@@ -25,7 +33,7 @@ export default function TopCreators() {
                 <p className='text-3xl tracking-[-0.04em]'>Top Creators</p>
                 <p className='font-light text-sm mt-2 tracking-wide'>Checkout Top Rated Creators on the NFT Marketplace</p>
             </div>
-            <button className='flex items-center text-sm border border-[#A259FF] px-[30px] rounded-xl gap-[8px] hoverEffectBtn transition mt-5'>
+            <button className='flex items-center text-sm border border-[#A259FF] px-[30px] rounded-xl gap-[8px] hoverEffectBtn transition mt-5' onClick={handleClick}>
                 <img className='h-[14px]' src={Rocket} alt="" />
                 <p className='text-[12px] tracking-wide sans'>View Rankings</p>
             </button>

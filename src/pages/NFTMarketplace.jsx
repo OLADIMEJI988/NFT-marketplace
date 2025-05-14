@@ -75,7 +75,7 @@ export default function NFTMarketplace() {
   ];
 
   const allCollections = [
-    { mainimg: paradox6, title: "Paradox 2.6", creatorimg: nebulaKid, creatorname: "Paradox Club" },
+    { mainimg: paradox2, title: "Paradox 2.2", creatorimg: nebulaKid, creatorname: "Paradox Club" },
     { mainimg: boredmonkey0, title: "BoredApe 2.0", creatorimg: iceape, creatorname: "Ice Ape Club" },
     { mainimg: boredmonkey1, title: "BoredApe 2.1", creatorimg: iceape, creatorname: "Ice Ape Club" },
     { mainimg: paradox0, title: "Paradox 2.0", creatorimg: nebulaKid, creatorname: "Paradox Club" },
@@ -83,7 +83,7 @@ export default function NFTMarketplace() {
     { mainimg: paradox1, title: "Paradox 2.1", creatorimg: nebulaKid, creatorname: "Paradox Club" },
     { mainimg: boredmonkey3, title: "BoredApe 2.3", creatorimg: iceape, creatorname: "Ice Ape Club" },
     { mainimg: boredmonkey4, title: "BoredApe 2.4", creatorimg: iceape, creatorname: "Ice Ape Club" },
-    { mainimg: paradox2, title: "Paradox 2.2", creatorimg: nebulaKid, creatorname: "Paradox Club" },
+    { mainimg: paradox6, title: "Paradox 2.6", creatorimg: nebulaKid, creatorname: "Paradox Club" },
     { mainimg: boredmonkey5, title: "BoredApe 2.5", creatorimg: iceape, creatorname: "Ice Ape Club" },
     { mainimg: paradox3, title: "Paradox 2.3", creatorimg: nebulaKid, creatorname: "Paradox Club" },
     { mainimg: boredmonkey6, title: "BoredApe 2.6", creatorimg: iceape, creatorname: "Ice Ape Club" },
@@ -111,9 +111,9 @@ export default function NFTMarketplace() {
     <>
       <Header />
       <div className='sans bg-[#2B2B2B] text-white text-start border-b-2 border-[#2B2B2B]'>
-        <div className='py-12 px-32'>
+        <div className='py-14 px-32'>
           <p className='text-5xl'>Browse Marketplace</p>
-          <p className='font-light text-[15px] tracking-wide mt-2'>
+          <p className='font-light text-[15px] tracking-wide mt-3'>
             Browse through more than 50k NFTs on the NFT Marketplace
           </p>
           <div className='flex items-center gap-10 mt-5'>

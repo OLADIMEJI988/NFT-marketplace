@@ -32,7 +32,11 @@ export default function AccHeader() {
         <Link to="/NFTMarketplace">
           <p className='cursor-pointer hoverEffectText transition'>Marketplace</p>
         </Link>
-        <p className='cursor-pointer hoverEffectText transition'>Rankings</p>
+
+        <Link to="/CreatorRankings">
+          <p className='cursor-pointer hoverEffectText transition'>Rankings</p>
+        </Link>
+        
         <Link to="/ConnectWallet">
           <p className='cursor-pointer hoverEffectText transition'>Connect a wallet</p>
         </Link>
