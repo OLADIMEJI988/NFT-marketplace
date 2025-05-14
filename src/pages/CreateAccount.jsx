@@ -46,7 +46,7 @@ export default function CreateAccount() {
     setTimeout(() => {
       setShowPopup(false);
       navigate('/');
-    }, 3000);
+    }, 4000);
   };
 
   return (
