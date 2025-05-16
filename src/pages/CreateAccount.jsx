@@ -17,7 +17,6 @@ export default function CreateAccount() {
   });
 
   const [showPopup, setShowPopup] = useState(false);
-
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -54,28 +53,30 @@ export default function CreateAccount() {
       <AccHeader />
 
       {showPopup && (
-            <div className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50">
-              <div className="sans bg-[#2B2B2B] text-start w-96 h-44 text-white px-6 py-4 rounded-xl shadow-lg text-lg">
-                <img className='h-12' src={successicon} alt="" />
-                <p className='trackimg-wide my-2 text-xl'>Account Created Successfully!</p>
-                <p className='text-sm tracking-wide font-light'>Welcome {form.username}! we're glad to have you onboard.</p>
-              </div>
-            </div>
-       )}
+        <div className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="sans bg-[#2B2B2B] text-start w-96 h-44 text-white px-6 py-4 rounded-xl shadow-lg text-lg">
+            <img className='h-12' src={successicon} alt="Success icon" />
+            <p className='tracking-wide my-2 text-xl'>Account Created Successfully!</p>
+            <p className='text-sm tracking-wide font-light'>Welcome {form.username}! We're glad to have you onboard.</p>
+          </div>
+        </div>
+      )}
 
-      <div className='flex bg-[#2B2B2B] justify-center sans text-white text-start gap-14'>
-        <img className='h-[500px]' src={mainImg} alt="" />
-        <div className='w-80 flex flex-col justify-center'>
-          <p className='text-4xl'>Create account</p>
-          <p className='font-light text-sm tracking-wide w-72 mt-3'>
+      <div className='flex flex-col lg:flex-row items-center justify-center bg-[#2B2B2B] text-white sans text-start px-5 sm:px-10 lg:px-20 py-10 gap-10'>
+        <img className='w-[300px] sm:w-[400px] md:w-[450px] lg:h-[500px] object-contain' src={mainImg} alt="Create Account Visual" />
+        
+        <div className='w-full max-w-md flex flex-col justify-center'>
+          <p className='text-3xl sm:text-4xl'>Create account</p>
+          <p className='font-light text-sm tracking-wide mt-3'>
             Welcome! Enter Your Details And Start Creating, Collecting And Selling NFTs.
           </p>
-          <div className='mt-4 text-sm'>
+
+          <div className='mt-4 text-sm flex flex-col gap-3'>
             <input
               name="username"
               onChange={handleChange}
               value={form.username}
-              className='py-3 pl-5 pr-9 rounded-xl outline-none border-none my-3 text-black w-72 placeholder:text-[#2B2B2B]'
+              className='py-3 pl-5 pr-4 rounded-xl outline-none border-none text-black placeholder:text-[#2B2B2B]'
               type="text"
               placeholder='Username'
             />
@@ -83,15 +84,15 @@ export default function CreateAccount() {
               name="email"
               onChange={handleChange}
               value={form.email}
-              className='py-3 pl-5 pr-9 rounded-xl outline-none border-none text-black w-72 placeholder:text-[#2B2B2B]'
-              type="text"
+              className='py-3 pl-5 pr-4 rounded-xl outline-none border-none text-black placeholder:text-[#2B2B2B]'
+              type="email"
               placeholder='Email Address'
             />
             <input
               name="password"
               onChange={handleChange}
               value={form.password}
-              className='py-3 pl-5 pr-9 rounded-xl outline-none border-none my-3 text-black w-72 placeholder:text-[#2B2B2B]'
+              className='py-3 pl-5 pr-4 rounded-xl outline-none border-none text-black placeholder:text-[#2B2B2B]'
               type="password"
               placeholder='Password'
             />
@@ -99,16 +100,21 @@ export default function CreateAccount() {
               name="confirmPassword"
               onChange={handleChange}
               value={form.confirmPassword}
-              className='py-3 pl-5 pr-9 rounded-xl outline-none border-none text-black w-72 placeholder:text-[#2B2B2B]'
+              className='py-3 pl-5 pr-4 rounded-xl outline-none border-none text-black placeholder:text-[#2B2B2B]'
               type="password"
               placeholder='Confirm Password'
             />
           </div>
-          <button onClick={handleSubmit} className='flex items-center w-72 mt-5 text-sm bg-[#A259FF] py-3 px-[30px] rounded-xl gap-[5px] cursor-pointer justify-center hoverEffect transition'>
-            <p className='text-[13px] tracking-wide sans text-white'>Create Account</p>
+
+          <button
+            onClick={handleSubmit}
+            className='mt-5 text-sm bg-[#A259FF] py-3 px-6 rounded-xl gap-2 cursor-pointer justify-center hoverEffect transition w-full text-center text-white'
+          >
+            <p className='text-[13px] tracking-wide sans'>Create Account</p>
           </button>
         </div>
       </div>
+
       <Footer />
     </>
   );

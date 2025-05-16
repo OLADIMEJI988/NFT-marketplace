@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Marketplace from '../components/Marketplace';
+import MarketplaceCollections from '../components/MarketplaceCollections';
 import Footer from '../components/Footer';
 
 import searchicon from "../assets/searchicon.png";
@@ -48,13 +49,6 @@ import paradox6 from "../assets/paradox2.6.png";
 import paradox7 from "../assets/paradox2.7.png";
 import paradox8 from "../assets/paradox2.8.png";
 
-
-
-
-
-
-import MarketplaceCollections from '../components/MarketplaceCollections';
-
 export default function NFTMarketplace() {
   const [activeTab, setActiveTab] = useState('NFTs');
   const [searchTerm, setSearchTerm] = useState('');
@@ -93,73 +87,66 @@ export default function NFTMarketplace() {
     { mainimg: boredmonkey8, title: "BoredApe 2.8", creatorimg: iceape, creatorname: "Ice Ape Club" },
     { mainimg: paradox4, title: "Paradox 2.4", creatorimg: nebulaKid, creatorname: "Paradox Club" },
     { mainimg: paradox8, title: "Paradox 2.8", creatorimg: nebulaKid, creatorname: "Paradox Club" },
-
   ];
 
   const filteredNfts = allNfts.filter(nft =>
     nft.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     nft.creatorname.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  
+
   const filteredCollections = allCollections.filter(collection =>
     collection.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     collection.creatorname.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  
 
   return (
     <>
       <Header />
-      <div className='sans bg-[#2B2B2B] text-white text-start border-b-2 border-[#2B2B2B]'>
-        <div className='py-14 px-32'>
-          <p className='text-5xl'>Browse Marketplace</p>
-          <p className='font-light text-[15px] tracking-wide mt-3'>
+      <div className='bg-[#2B2B2B] text-white'>
+        <div className='py-14 px-5 sm:px-10 md:px-20 lg:px-32'>
+          <p className='text-3xl sm:text-4xl md:text-5xl font-semibold'>Browse Marketplace</p>
+          <p className='font-light text-sm md:text-base tracking-wide mt-3'>
             Browse through more than 50k NFTs on the NFT Marketplace
           </p>
-          <div className='flex items-center gap-10 mt-5'>
+
+          <div className='relative mt-5'>
             <input
               type="text"
               placeholder='Search your favourite NFTs'
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className='bg-transparent text-sm w-[1000px] px-3 py-3 rounded-xl focus:outline-none border border-[#424242]'
+              className='bg-transparent w-full px-5 py-3 rounded-xl border border-[#424242] text-sm md:text-base placeholder:text-[#aaa] focus:outline-none'
             />
-            <img className='-translate-x-20 h-4' src={searchicon} alt="search" />
+            <img className='absolute top-1/2 right-5 transform -translate-y-1/2 h-5' src={searchicon} alt="search" />
           </div>
         </div>
 
         <img className='w-full py-10 -mt-10' src={line} alt="divider" />
 
-        <div className='flex -mt-7 pb-3 gap-64 items-center justify-center'>
+        <div className='flex sm:flex-row justify-center items-center gap-10 sm:gap-20 px-5 sm:px-0 -mt-7 pb-3'>
           <div
-            className={`sans flex gap-[10px] items-center cursor-pointer ${
-              activeTab === 'NFTs' ? 'border-b border-[#858584] py-1 w-64 justify-center' : ''
-            }`}
+            className={`cursor-pointer flex gap-3 items-center ${activeTab === 'NFTs' ? 'border-b border-[#858584] pb-1' : ''}`}
             onClick={() => setActiveTab('NFTs')}
           >
-            <p className='text-[17px]'>NFTs</p>
-            <div className='spaceMono bg-[#858584] px-[7px] py-[10px] items-center rounded-full text-xs'>302</div>
+            <p className='text-base'>NFTs</p>
+            <span className='bg-[#858584] px-2 py-1 rounded-full text-xs'>302</span>
           </div>
           <div
-            className={`sans flex gap-[10px] items-center cursor-pointer ${
-              activeTab === 'Collections' ? 'border-b border-[#858584] py-1 w-64 justify-center' : ''
-            }`}
+            className={`cursor-pointer flex gap-3 items-center ${activeTab === 'Collections' ? 'border-b border-[#858584] pb-1' : ''}`}
             onClick={() => setActiveTab('Collections')}
           >
-            <p className={`text-[17px] ${activeTab === 'Collections' ? 'text-white' : 'text-[#858584]'}`}>Collections</p>
-            <div className='spaceMono bg-[#3B3B3B] px-2 py-2 items-center rounded-full text-xs'>67</div>
+            <p className={`text-base ${activeTab === 'Collections' ? 'text-white' : 'text-[#858584]'}`}>Collections</p>
+            <span className='bg-[#3B3B3B] px-2 py-1 rounded-full text-xs'>67</span>
           </div>
         </div>
 
-        <div className='bg-[#3B3B3B] pt-8 pb-14 transition-opacity duration-500 opacity-100'>
-            {activeTab === 'NFTs' ? (
-                <Marketplace nfts={filteredNfts} />
-            ) : (
-                <MarketplaceCollections nfts={filteredCollections} />
-            )}
+        <div className='bg-[#3B3B3B] pt-8 pb-14 px-5 sm:px-10 lg:px-32'>
+          {activeTab === 'NFTs' ? (
+            <Marketplace nfts={filteredNfts} />
+          ) : (
+            <MarketplaceCollections nfts={filteredCollections} />
+          )}
         </div>
-
-        
       </div>
       <Footer />
     </>

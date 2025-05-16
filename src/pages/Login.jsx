@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import mainImg from "../assets/mainImg.png";
 import successicon from "../assets/successicon.png";
 
-
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -20,7 +19,6 @@ export default function Login() {
     if (username && email && password) {
       sessionStorage.setItem('username', username);
       setShowPopup(true);
-
       setTimeout(() => {
         setShowPopup(false);
         navigate('/');
@@ -33,51 +31,59 @@ export default function Login() {
   return (
     <>
       <Header />
-      <div className='flex bg-[#2B2B2B] justify-center sans text-white text-start gap-14'>
-        <img className='h-[500px]' src={mainImg} alt="" />
-        <div className='w-72 flex flex-col justify-center'>
-          <p className='text-4xl'>Log In</p>
-          <p className='font-light text-sm tracking-wide mt-3'>Welcome Back! Enter Your Details And Start Creating, Collecting And Selling NFTs.</p>
-          <div className='mt-4 text-sm'>
+
+      <div className='flex flex-col lg:flex-row items-center justify-center bg-[#2B2B2B] text-white sans text-start px-5 sm:px-10 lg:px-20 py-10 gap-10'>
+        <img className='w-[300px] sm:w-[400px] md:w-[450px] lg:h-[500px] object-contain' src={mainImg} alt="Login Visual" />
+        
+        <div className='w-full max-w-md flex flex-col justify-center'>
+          <p className='text-3xl sm:text-4xl'>Log In</p>
+          <p className='font-light text-sm tracking-wide mt-3'>
+            Welcome Back! Enter Your Details And Start Creating, Collecting And Selling NFTs.
+          </p>
+
+          <div className='mt-4 text-sm flex flex-col gap-3'>
             <input
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className='py-3 pl-5 pr-9 rounded-xl outline-none border-none my-3 text-black w-72 placeholder:text-[#2B2B2B]'
+              className='py-3 pl-5 pr-4 rounded-xl outline-none border-none text-black placeholder:text-[#2B2B2B]'
               type="text"
               placeholder='Username'
             />
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className='py-3 pl-5 pr-9 rounded-xl outline-none border-none text-black w-72 placeholder:text-[#2B2B2B]'
-              type="text"
+              className='py-3 pl-5 pr-4 rounded-xl outline-none border-none text-black placeholder:text-[#2B2B2B]'
+              type="email"
               placeholder='Email Address'
             />
             <input
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className='py-3 pl-5 pr-9 rounded-xl outline-none border-none my-3 text-black w-72 placeholder:text-[#2B2B2B]'
+              className='py-3 pl-5 pr-4 rounded-xl outline-none border-none text-black placeholder:text-[#2B2B2B]'
               type="password"
               placeholder='Password'
             />
           </div>
+
           <button
             onClick={handleLogin}
-            className='flex items-center w-72 mt-5 text-sm bg-[#A259FF] py-3 px-[30px] rounded-xl gap-[5px] cursor-pointer justify-center hoverEffect transition'>
-            <p className='text-[14px] tracking-wide sans text-white'>Log In</p>
+            className='mt-5 text-sm bg-[#A259FF] py-3 px-6 rounded-xl cursor-pointer hoverEffect transition w-full text-white text-center'>
+            <p className='text-[14px] tracking-wide sans'>Log In</p>
           </button>
         </div>
       </div>
+
       <Footer />
 
-      {/* Popup Overlay */}
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50">
           <div className="sans bg-[#2B2B2B] text-start w-96 h-44 text-white px-6 py-4 rounded-xl shadow-lg text-lg">
-            <img className='h-12' src={successicon} alt="" />
-              <p className='trackimg-wide my-2 text-xl'>Login Successful!</p>
-              <p className='text-sm tracking-wide font-light'>Welcome Back {username}! we're glad to have you back onboard.</p>
-            </div>
+            <img className='h-12' src={successicon} alt="Success Icon" />
+            <p className='tracking-wide my-2 text-xl'>Login Successful!</p>
+            <p className='text-sm tracking-wide font-light'>
+              Welcome Back {username}! We're glad to have you back onboard.
+            </p>
+          </div>
         </div>
       )}
     </>
