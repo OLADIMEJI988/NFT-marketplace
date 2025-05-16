@@ -19,10 +19,10 @@ export default function Header() {
   const toggleMenu = () => {
     if (!menuOpen) {
       setMenuVisible(true);
-      setTimeout(() => setMenuOpen(true), 10); // slight delay for transition
+      setTimeout(() => setMenuOpen(true), 10);
     } else {
       setMenuOpen(false);
-      setTimeout(() => setMenuVisible(false), 300); // match duration
+      setTimeout(() => setMenuVisible(false), 300); 
     }
   };
 
