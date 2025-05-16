@@ -24,12 +24,10 @@ export default function AccHeader() {
   return (
     <header className="bg-[#2B2B2B] text-white py-4 px-6 sm:px-10">
       <div className="flex items-center justify-between">
-        {/* Logo */}
         <Link to="/">
           <img className="h-5 sm:h-6" src={logo} alt="logo" />
         </Link>
 
-        {/* Mobile menu button */}
         <div className="sm:hidden">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -61,14 +59,13 @@ export default function AccHeader() {
           </button>
         </div>
 
-        {/* Navigation items */}
         <nav
           className={`${
             menuOpen ? 'flex' : 'hidden'
-          } absolute sm:static top-16 left-0 w-full sm:w-auto bg-[#2B2B2B] sm:bg-transparent flex-col sm:flex-row sm:flex items-center gap-6 sm:gap-9 text-[13px] z-50 px-6 sm:px-0 py-4 sm:py-0`}
+          } absolute sm:static top-14 left-0 w-full sm:w-auto bg-[#2B2B2B] sm:bg-transparent flex-col sm:flex-row sm:flex items-center gap-6 sm:gap-9 text-[13px] z-50 px-6 sm:px-0 py-4 sm:py-0`}
         >
           <Link to="/NFTMarketplace" onClick={() => setMenuOpen(false)}>
-            <p className="cursor-pointer hover:text-[#A259FF] transition">Marketplace</p>
+            <p className="cursor-pointer hover:text-[#A259FF] transition mt-1">Marketplace</p>
           </Link>
 
           <Link to="/CreatorRankings" onClick={() => setMenuOpen(false)}>

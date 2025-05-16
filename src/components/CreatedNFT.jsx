@@ -16,8 +16,6 @@ export default function CreatedNFT({ mainimg, title }) {
 
   const addNFTToCart = (nft) => {
     const existing = JSON.parse(sessionStorage.getItem("nftsInCart")) || [];
-
-    // preventing duplicates
     const alreadyExists = existing.some(item => item.title === nft.title);
     if (alreadyExists) return;
 
@@ -56,27 +54,23 @@ export default function CreatedNFT({ mainimg, title }) {
     <>
       {showModal && (
         <div
-          className={`fixed inset-0 z-50 flex text-start transition-all duration-300 ease-in-out ${
-            isOpen
-              ? 'bg-black bg-opacity-40 backdrop-blur-sm'
-              : 'bg-black bg-opacity-0 backdrop-blur-none'
+          className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-300 ease-in-out ${
+            isOpen ? 'bg-black bg-opacity-40 backdrop-blur-sm' : 'bg-black bg-opacity-0 backdrop-blur-none'
           }`}
         >
           <div
-            className={`bg-[#2B2B2B] text-white w-full px-6 py-4 rounded-t-xl shadow-lg font-semibold mt-[20vh] border-t border-[#2B2B2B] transform transition-transform duration-300 ease-out ${
+            className={`bg-[#2B2B2B] text-white w-full max-w-5xl mx-1 px-4 sm:px-6 md:px-10 py-6 rounded-xl shadow-lg font-semibold transform transition-transform duration-300 ease-out overflow-y-auto max-h-[85vh] ${
               isOpen ? 'translate-y-0' : 'translate-y-full'
             }`}
           >
-            <div className="flex h-full">
-              {/* checkout section */}
-              <div className="w-1/2 pr-4">
+            <div className="flex flex-col lg:flex-row gap-8">
+              <div className="lg:w-1/2">
                 <div className='mb-4'>
                   <p className='text-2xl sans'>
                     Checkout <span className="text-lg ml-1">({nftsInCart.length})</span>
                   </p>
                 </div>
 
-                {/* cart list */}
                 <div className="space-y-4 max-h-[300px] overflow-y-auto mt-5">
                   {nftsInCart.map((nft, index) => (
                     <div key={index} className="flex items-center justify-between gap-4">
@@ -93,7 +87,7 @@ export default function CreatedNFT({ mainimg, title }) {
                         <p className="text-white spaceMono text-sm">{nft.price} ETH</p>
                         <button
                           onClick={() => removeNFTFromCart(index)}
-                          className="text-red-400 text-sm hover:text-red-600 transition mr-5"
+                          className="text-red-400 text-sm hover:text-red-600 transition mr-2"
                           title="Remove from cart"
                         >
                           ✖️
@@ -103,38 +97,38 @@ export default function CreatedNFT({ mainimg, title }) {
                   ))}
                 </div>
 
-                {/* total price */}
-                <div className="mt-4 pt-4 border-t border-[#3D3D3D] text-end mr-10">
+                <div className="mt-4 pt-4 border-t border-[#3D3D3D] text-end mr-2">
                   <p className="text-lg font-semibold spaceMono">
                     Total: {getTotalPrice()} ETH
                   </p>
                 </div>
               </div>
 
-              {/* Divider */}
-              <div className="w-[1px] bg-[#444] mx-2"></div>
+              <div className="hidden lg:block w-[1px] bg-[#444] mx-2"></div>
 
-              {/* payment method section */}
-              <div className="w-1/2 pl-4">
+              <div className="lg:w-1/2 w-full">
                 <div className='flex justify-between items-center mb-4'>
-                    <p className="text-gray-300 text-sm tracking-wide">PAYMENT METHOD</p>
-                    <button className="text-xl font-bold hoverEffectBtn transition" onClick={closePopup}>✖️</button>
+                  <p className="text-gray-300 text-sm tracking-wide">PAYMENT METHOD</p>
+                  <button
+                    className="text-xl font-bold hoverEffectBtn transition"
+                    onClick={closePopup}
+                  >
+                    ✖️
+                  </button>
                 </div>
-                
                 <PayOut />
               </div>
-
             </div>
           </div>
         </div>
       )}
 
       <div className='mt-5 cursor-pointer relative group'>
-        <img className='h-60 rounded-t-3xl' src={mainimg} alt="" />
+        <img className='h-60 w-full object-cover rounded-t-3xl' src={mainimg} alt={title} />
         <div className='text-start bg-[#2B2B2B] py-4 px-6 text-white sans rounded-b-[13px]'>
           <p className='text-[16px]'>{title}</p>
           <div className='flex items-center gap-2 mt-2'>
-            <img className='h-5' src={Avatar} alt="" />
+            <img className='h-5' src={Avatar} alt="creator" />
             <p className='text-xs font-light spaceMono tracking-wide'>Animakid</p>
           </div>
           <div className='flex mt-5 justify-between'>
