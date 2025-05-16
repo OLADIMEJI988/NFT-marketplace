@@ -3,11 +3,10 @@ import { useNavigate, Link } from 'react-router-dom';
 import logo from "../assets/logo.png";
 import User from "../assets/User.png";
 
-import './Header.css';
-
 export default function AccHeader() {
   const navigate = useNavigate();
   const [username, setUsername] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const storedUsername = sessionStorage.getItem('username');
@@ -23,33 +22,73 @@ export default function AccHeader() {
   };
 
   return (
-    <div className='bg-[#2B2B2B] py-5 flex items-center justify-between px-10'>
-      <Link to="/">
-        <img className='h-5' src={logo} alt="logo" />
-      </Link>
-
-      <div className='flex text-white gap-9 text-[13px] items-center sans'>
-        <Link to="/NFTMarketplace">
-          <p className='cursor-pointer hoverEffectText transition'>Marketplace</p>
+    <header className="bg-[#2B2B2B] text-white py-4 px-6 sm:px-10">
+      <div className="flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/">
+          <img className="h-5 sm:h-6" src={logo} alt="logo" />
         </Link>
 
-        <Link to="/CreatorRankings">
-          <p className='cursor-pointer hoverEffectText transition'>Rankings</p>
-        </Link>
-        
-        <Link to="/ConnectWallet">
-          <p className='cursor-pointer hoverEffectText transition'>Connect a wallet</p>
-        </Link>
+        {/* Mobile menu button */}
+        <div className="sm:hidden">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-white focus:outline-none"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {menuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
 
-        <button
-          className='flex items-center text-sm bg-[#A259FF] py-3 px-5 rounded-xl gap-[5px] hoverEffectBtn transition'
-          onClick={handleLoginClick}
-          disabled={!!username} // disables if username exists
+        {/* Navigation items */}
+        <nav
+          className={`${
+            menuOpen ? 'flex' : 'hidden'
+          } absolute sm:static top-16 left-0 w-full sm:w-auto bg-[#2B2B2B] sm:bg-transparent flex-col sm:flex-row sm:flex items-center gap-6 sm:gap-9 text-[13px] z-50 px-6 sm:px-0 py-4 sm:py-0`}
         >
-          <img className='h-[15px]' src={User} alt="user" />
-          <p className='-mt-[2px]'>{username ? username : 'Login'}</p>
-        </button>
+          <Link to="/NFTMarketplace" onClick={() => setMenuOpen(false)}>
+            <p className="cursor-pointer hover:text-[#A259FF] transition">Marketplace</p>
+          </Link>
+
+          <Link to="/CreatorRankings" onClick={() => setMenuOpen(false)}>
+            <p className="cursor-pointer hover:text-[#A259FF] transition">Rankings</p>
+          </Link>
+
+          <Link to="/ConnectWallet" onClick={() => setMenuOpen(false)}>
+            <p className="cursor-pointer hover:text-[#A259FF] transition">Connect a wallet</p>
+          </Link>
+
+          <button
+            className="flex items-center text-sm bg-[#A259FF] py-2 px-4 sm:py-3 sm:px-5 rounded-xl gap-2 hover:bg-[#8F44FF] transition"
+            onClick={handleLoginClick}
+            disabled={!!username}
+          >
+            <img className="h-[15px]" src={User} alt="user" />
+            <p className="-mt-[2px]">{username ? username : 'Login'}</p>
+          </button>
+        </nav>
       </div>
-    </div>
+    </header>
   );
 }
