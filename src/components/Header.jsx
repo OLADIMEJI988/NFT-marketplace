@@ -7,6 +7,7 @@ export default function Header() {
   const navigate = useNavigate();
   const [username, setUsername] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
 
   useEffect(() => {
     const storedUsername = sessionStorage.getItem('username');
@@ -14,6 +15,16 @@ export default function Header() {
       setUsername(storedUsername);
     }
   }, []);
+
+  const toggleMenu = () => {
+    if (!menuOpen) {
+      setMenuVisible(true);
+      setTimeout(() => setMenuOpen(true), 10); // slight delay for transition
+    } else {
+      setMenuOpen(false);
+      setTimeout(() => setMenuVisible(false), 300); // match duration
+    }
+  };
 
   const handleSignUpClick = () => {
     if (!username) {
@@ -28,10 +39,10 @@ export default function Header() {
           <img className="h-5 sm:h-6" src={logo} alt="logo" />
         </Link>
 
-        {/* Mobile menu */}
-        <div className="sm:hidden">
+        {/* Hamburger button */}
+        <div className="sm:hidden pb-5">
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={toggleMenu}
             className="text-white focus:outline-none"
           >
             <svg
@@ -60,29 +71,34 @@ export default function Header() {
           </button>
         </div>
 
-        <nav
-          className={`${
-            menuOpen ? 'flex' : 'hidden'
-          } absolute sm:static top-14 left-0 w-full sm:w-auto bg-[#2B2B2B] sm:bg-transparent flex-col sm:flex-row sm:flex items-center gap-6 sm:gap-9 text-[13px] sm:text-sm z-50 px-6 sm:px-0 py-4 sm:py-0`}
-        >
-          <Link to="/NFTMarketplace" onClick={() => setMenuOpen(false)}>
-            <p className="cursor-pointer hover:text-[#A259FF] transition mt-1">Marketplace</p>
-          </Link>
-          <Link to="/CreatorRankings" onClick={() => setMenuOpen(false)}>
-            <p className="cursor-pointer hover:text-[#A259FF] transition">Rankings</p>
-          </Link>
-          <Link to="/ConnectWallet" onClick={() => setMenuOpen(false)}>
-            <p className="cursor-pointer hover:text-[#A259FF] transition">Connect a wallet</p>
-          </Link>
-          <button
-            className="flex items-center text-sm bg-[#A259FF] py-2 px-4 sm:py-3 sm:px-5 rounded-xl gap-2 hover:bg-[#8F44FF] transition"
-            onClick={handleSignUpClick}
-            disabled={!!username}
+        {/* Mobile Menu */}
+        {menuVisible && (
+          <nav
+            className={`absolute sm:static top-14 left-0 w-full sm:w-auto bg-[#2B2B2B] sm:bg-transparent flex-col sm:flex-row sm:flex items-center gap-6 sm:gap-9 text-[13px] sm:text-sm z-50 px-6 sm:px-0 py-4 sm:py-0 ${
+              menuOpen
+                ? 'translate-y-0 opacity-100 flex'
+                : '-translate-y-5 opacity-0 pointer-events-none'
+            }`}
           >
-            <img className="h-4" src={User} alt="user" />
-            <span>{username ? username : 'Sign Up'}</span>
-          </button>
-        </nav>
+            <Link to="/NFTMarketplace" onClick={toggleMenu}>
+              <p className="cursor-pointer hover:text-[#A259FF] transition mt-3">Marketplace</p>
+            </Link>
+            <Link to="/CreatorRankings" onClick={toggleMenu}>
+              <p className="cursor-pointer hover:text-[#A259FF] transition">Rankings</p>
+            </Link>
+            <Link to="/ConnectWallet" onClick={toggleMenu}>
+              <p className="cursor-pointer hover:text-[#A259FF] transition">Connect a wallet</p>
+            </Link>
+            <button
+              className="flex items-center text-sm bg-[#A259FF] py-2 px-4 sm:py-3 sm:px-5 rounded-xl gap-2 hover:bg-[#8F44FF] transition"
+              onClick={handleSignUpClick}
+              disabled={!!username}
+            >
+              <img className="h-4" src={User} alt="user" />
+              <span>{username ? username : 'Sign Up'}</span>
+            </button>
+          </nav>
+        )}
       </div>
     </header>
   );
