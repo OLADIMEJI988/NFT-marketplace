@@ -73,9 +73,9 @@ export default function MarketNfts({ mainimg, title, creatorimg, creatorname }) 
                   {nftsInCart.map((nft, index) => (
                     <div
                       key={index}
-                      className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 bg-[#3A3A3A] px-3 py-2 rounded-lg"
+                      className="flex items-center justify-between gap-4"
                     >
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-4">
                         <span className="text-white spaceMono text-sm">{index + 1}.</span>
                         <img
                           src={nft.mainimg}
