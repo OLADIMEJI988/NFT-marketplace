@@ -5,7 +5,7 @@ import Rocket from "../assets/RocketLaunch.png";
 
 export default function Hero() {
   return (
-    <div className='flex flex-col lg:flex-row items-center bg-[#2B2B2B] justify-between py-14 px-6 lg:px-20 gap-10'>
+    <div className='flex flex-col lg:flex-row items-center bg-[#2B2B2B] justify-between pt-8 pb-12 sm:pt-14 sm:pb-14 px-6 lg:px-20 gap-10'>
       
       <div className='text-white text-start max-w-lg w-full'>
         <p className='text-4xl sm:text-5xl lg:text-6xl font-semibold sans leading-tight'>
