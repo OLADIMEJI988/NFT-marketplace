@@ -62,7 +62,7 @@ export default function CreateAccount() {
         </div>
       )}
 
-      <div className='flex flex-col lg:flex-row items-center justify-center bg-[#2B2B2B] text-white sans text-start px-5 sm:px-10 lg:px-20 py-10 gap-10'>
+      <div className='flex flex-col lg:flex-row items-center justify-center bg-[#2B2B2B] text-white sans text-start px-5 sm:px-10 lg:px-20 pt-5 pb-10 sm:pt-10 gap-10'>
         <img className='w-[300px] sm:w-[400px] md:w-[450px] lg:h-[500px] object-contain' src={mainImg} alt="Create Account Visual" />
         
         <div className='w-full max-w-md flex flex-col justify-center'>
