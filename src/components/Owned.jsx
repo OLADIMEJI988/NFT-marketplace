@@ -13,7 +13,7 @@ import CreatedNFT from './CreatedNFT';
 
 export default function Owned() {
   return (
-    <div className="px-4 sm:px-8 md:px-20 lg:px-40 xl:px-44 py-1">
+    <div className="px-4 sm:px-8 md:px-20 lg:px-40 xl:px-44 py-1 flex justify-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 justify-items-center">
         <CreatedNFT mainimg={nftcharacter1} title="Aiko Yukimura" />
         <CreatedNFT mainimg={nftcharacter2} title="Takeshi Arata" />

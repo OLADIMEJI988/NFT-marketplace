@@ -64,15 +64,17 @@ export default function TopCreators() {
         </button>
       </div>
 
-      <div className='mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center'>
-        {currentCreators.map((creator, index) => (
-          <Creators
-            key={index}
-            num={creator.num}
-            img={creator.img}
-            creatorName={creator.creatorName}
-          />
-        ))}
+      <div className='flex justify-center'>
+        <div className='mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center'>
+          {currentCreators.map((creator, index) => (
+            <Creators
+              key={index}
+              num={creator.num}
+              img={creator.img}
+              creatorName={creator.creatorName}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Pagination */}
