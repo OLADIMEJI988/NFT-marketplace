@@ -32,7 +32,7 @@ export default function PayOut() {
                 onClick={() => setSelectedWallet(wallet.id)}
                 className={`group flex items-center justify-between border py-[22px] px-6 w-full rounded-md transition 
                 ${selectedWallet === wallet.id ? 'bg-[#A259FF] border-[#A259FF] text-white' : 'bg-transparent border-[#A259FF]'}
-                hover:bg-[#A259FF]/20`}
+                lg:hover:bg-[#A259FF]/20`}
             >
           
                 <div className="flex items-center gap-3">
