@@ -23,20 +23,26 @@ export default function ConnectWallet() {
             </p>
 
             <div className='mt-7 text-sm flex flex-col gap-5 w-full items-center'>
-                <button className='flex items-center gap-5 border border-[#A259FF] bg-[#3B3B3B] py-3 px-6 rounded-xl hoverEffect transition w-full max-w-xs justify-center'>
-                <img className='h-7' src={metamask} alt="Metamask" />
-                <p className='text-[15px]'>Metamask</p>
-                </button>
+                <a href="https://metamask.io" className='flex items-center gap-5 border border-[#A259FF] bg-[#3B3B3B] py-3 px-6 rounded-xl hoverEffect transition w-full max-w-xs justify-center'>
+                    <button className='flex items-center gap-5 w-full max-w-xs justify-center'>
+                        <img className='h-7' src={metamask} alt="Metamask" />
+                        <p className='text-[15px]'>Metamask</p>
+                    </button>
+                </a>
 
-                <button className='flex items-center gap-5 border border-[#A259FF] bg-[#3B3B3B] py-3 px-6 rounded-xl hoverEffect transition w-full max-w-xs justify-center'>
-                <img className='h-8' src={walletconnect} alt="Wallet Connect" />
-                <p>Wallet Connect</p>
-                </button>
+                <a href="https://walletguide.walletconnect.network/" className='flex items-center gap-5 border border-[#A259FF] bg-[#3B3B3B] py-3 px-6 rounded-xl hoverEffect transition w-full max-w-xs justify-center'>
+                    <button className='flex items-center gap-5 w-full max-w-xs justify-center'>
+                        <img className='h-8' src={walletconnect} alt="Wallet Connect" />
+                        <p>Wallet Connect</p>
+                    </button>
+                </a>
 
-                <button className='flex items-center gap-5 border border-[#A259FF] bg-[#3B3B3B] py-3 px-6 rounded-xl hoverEffect transition w-full max-w-xs justify-center'>
-                <img className='h-8' src={coinbase} alt="Coinbase" />
-                <p>Coinbase</p>
-                </button>
+                <a href="https://www.coinbase.com/wallet" className='flex items-center gap-5 border border-[#A259FF] bg-[#3B3B3B] py-3 px-6 rounded-xl hoverEffect transition w-full max-w-xs justify-center'>
+                    <button className='flex items-center gap-5 w-full max-w-xs justify-center'>
+                        <img className='h-8' src={coinbase} alt="Coinbase" />
+                        <p>Coinbase</p>
+                    </button>
+                </a>  
             </div>
             </div> 
       </div>
