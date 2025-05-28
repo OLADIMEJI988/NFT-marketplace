@@ -1,11 +1,16 @@
 .hover:hover{
-    background-color: #5c5a5a46;
+    /* background-color: #5c5a5a46; */
+    background-color: #A259FF;
     z-index: 2;
 }
 
 .hoverEffect:hover{
     transform: scale(0.98) !important;
     z-index: 2;
+}
+
+.circleEffect:hover{
+    background-color: white !important;
 }
 
 .transition {

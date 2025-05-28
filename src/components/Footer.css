@@ -1,0 +1,12 @@
+.textEffect:hover{
+    color: #A259FF;
+}
+
+.imgEffect:hover{
+    transform: scale(1.16) !important;
+    z-index: 2;
+}
+
+.transition {
+    transition: 1s;
+}
