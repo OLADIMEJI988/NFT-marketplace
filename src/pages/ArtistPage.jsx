@@ -123,7 +123,7 @@ export default function ArtistPage() {
             className={`sans flex gap-2 items-center cursor-pointer ${activeTab === 'created' ? 'border-b border-[#858584] pb-1' : ''}`}
             onClick={() => setActiveTab('created')}
           >
-            <p className='text-[17px]'>Created</p>
+            <p className={`text-[17px] ${activeTab === 'created' ? 'text-white' : 'text-[#858584]'}`}>Created</p>
             <div className='spaceMono bg-[#858584] px-3 py-[2px] rounded-full text-xs'>302</div>
           </div>
           <div

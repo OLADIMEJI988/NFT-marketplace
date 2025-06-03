@@ -128,7 +128,7 @@ export default function NFTMarketplace() {
             className={`cursor-pointer flex gap-3 items-center ${activeTab === 'NFTs' ? 'border-b border-[#858584] pb-1' : ''}`}
             onClick={() => setActiveTab('NFTs')}
           >
-            <p className='text-base'>NFTs</p>
+            <p className={`text-base ${activeTab === 'NFTs' ? 'text-white' : 'text-[#858584]'}`}>NFTs</p>
             <span className='bg-[#858584] px-2 py-1 rounded-full text-xs'>302</span>
           </div>
           <div
